@@ -26,9 +26,11 @@
                         <span style="color:#a7aabb;">Muscle group:</span>
                         <span>asdasdasd</span>
                     </li>
-                    <li>
-                        Created by <span>{{$routine->user->name}}</span>
-                    </li>
+                    @if(isset($routine->user))
+                        <li>
+                            Created by <span>{{$routine->user->name}}</span>
+                        </li>
+                    @endif
                 </ul>
                 <div style="">
                     {{--<a class=" btn btn-danger" style="width:100%">add to fav wip</a>--}}
