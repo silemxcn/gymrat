@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/app.css">
+        <script src="{{ asset('js/app.js') }}"></script>
+        <title>Fitness app</title>
+    </head>
+    <body>
+    @include('inc.navbar')
+    <div class="container">
+        @include('inc.messages')
+        @yield('content')
+    </div>
+    </body>
+</html>
+
+
+
+
+////home
+
+
+
+@extends('layouts.app')
+@section('content')
+    <h1>Homepage TITLEEE</h1>
+    @if(count($posts) > 0)
+        @foreach($posts as $post)
+            <div class="well">
+                <h3><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
+                <small>{{$post->body}}}}</small>
+            </div>
+        @endforeach
+    @else
+        <p>No posts found</p>
+    @endif
+@endsection
